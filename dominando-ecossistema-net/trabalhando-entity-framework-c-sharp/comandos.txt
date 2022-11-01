@@ -1,0 +1,8 @@
+[1.6]: Configurando a conexão
+
+"ConexaoPadrao": "Server=localhost\\sqlexpress; Initial Catalog=Agenda; Integrated Security=True"
+
+[1.7]: Entendendo as migrations
+
+dotnet-ef migrations add CriacaoTabelaContato
+dotnet-ef database update
