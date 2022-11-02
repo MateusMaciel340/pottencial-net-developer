@@ -1,0 +1,46 @@
+<!-- [1.15]: Criando a página de deletar -->
+@model frontend_asp_net_mvc.Models.Contato;
+
+@{
+    ViewData["Title"] = "Deletar contato";
+}
+
+<h1 class="alert alert-danger">Deseja realmente deletar esse contato?</h1>
+
+<hr/>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Nome)
+        </dt>
+
+        <dt class="col-sm-10">
+            @Html.DisplayFor(x => x.Nome)
+        </dt>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Telefone)
+        </dt>
+
+        <dt class="col-sm-10">
+            @Html.DisplayFor(x => x.Telefone)
+        </dt>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Ativo)
+        </dt>
+
+        <dt class="col-sm-10">
+            @Html.DisplayFor(x => x.Ativo)
+        </dt>
+    </dl>
+</div>
+
+<form asp-action="Deletar">
+    <input type="submit" value="deletar" class="btn btn-danger"/>
+    <a asp-action="Index" 
+    class="btn btn-secondary">Voltar</a>
+</form>
+
+<br/>
