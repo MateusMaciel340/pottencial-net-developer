@@ -1,0 +1,46 @@
+<!-- [1.6]: Criando nossa primeira página -->
+
+<!-- [1.7]: Construindo nossa página de listagem -->
+@model IEnumerable<frontend_asp_net_mvc.Models.Contato>
+
+@{
+    ViewData["Title"] = "Listagem de contatos";
+}
+
+<h2>Contatos</h2>
+
+<p>
+    <a asp-action="Criar">Novo Contato</a>
+</p>
+
+<table class="table text-center">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Id)</th>
+            <th>@Html.DisplayNameFor(model => model.Nome)</th>
+            <th>@Html.DisplayNameFor(model => model.Telefone)</th>
+            <th>@Html.DisplayNameFor(model => model.Ativo)</th>
+            <th>Configuração</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(model => item.Id)</td>
+                <td>@Html.DisplayFor(model => item.Nome)</td>
+                <td>@Html.DisplayFor(model => item.Telefone)</td>
+                <td>@Html.DisplayFor(model => item.Ativo)</td>
+
+                <td>
+                    <a asp-action="Editar" class="btn btn-primary" 
+                        asp-route-id="@item.Id">Editar</a>
+                    <a asp-action="Detalhes" class="btn btn-secondary" 
+                        asp-route-id="@item.Id">Detalhes</a>
+                    <a asp-action="Deletar" class="btn btn-danger" 
+                        asp-route-id="@item.Id">Deletar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
